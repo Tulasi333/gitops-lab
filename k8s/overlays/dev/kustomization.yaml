@@ -4,5 +4,3 @@ kind: Kustomization
 resources:
   - ../../base
 
-# Optional: Add a name prefix or namespace for the dev environment
-namePrefix: dev-
