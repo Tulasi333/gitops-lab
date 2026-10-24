@@ -4,8 +4,3 @@ kind: Kustomization
 resources:
   - deployment.yaml  # Points to the file containing both your Deployment and Service
 
-labels:
-  - includeSelectors: true
-    pairs:
-      managed-by: argocd
-      environment: development
