@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/Tulasi333/gitops-lab.git'
     targetRevision: HEAD
-    path: k8s
+    path: k8s/overlays/dev
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
