@@ -2,10 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - deployment.yaml
-  - service.yaml  # Update this to match your exact service yaml filename if different
+  - deployment.yaml  # Points to the file containing both your Deployment and Service
 
-# Optional: You can set common labels for all resources here
-commonLabels:
-  managed-by: argocd
-  environment: development
+labels:
+  - includeSelectors: true
+    pairs:
+      managed-by: argocd
+      environment: development
