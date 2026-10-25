@@ -4,3 +4,17 @@ kind: Kustomization
 resources:
   - ../../base
 
+# Kustomize inline patch to scale replicas and set environment variables
+patches:
+  - target:
+      kind: Deployment
+      name: lab-app-deployment
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2
+      - op: add
+        path: /spec/template/spec/containers/0/env
+        value:
+          - name: APP_ENV
+            value: "development"
